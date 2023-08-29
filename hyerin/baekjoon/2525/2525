@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+
+        int time = (60*a+b) + c;
+
+        //  조건에 A가 0이상 23이하이므로, 23이 넘어가는 경우를 위해 24로 나눠줌.
+        int hour = (time / 60) % 24 ;
+        int min = time % 60 ;
+
+        System.out.println(hour+" "+min);
+    }
+}
+
