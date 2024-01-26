@@ -1,1 +1,29 @@
 
+import java.util.Scanner;
+  
+public class Main {
+  
+  public int solution(String str, char t){
+  	int answer=0;
+
+    //대소문자 통일(대문자로 다 변환)
+    str=str.toUpperCase();
+    t=Character.toUpperCase(t);
+    
+    for(char X : str.toCharArray()){
+    		if (X == t) answer++;
+    } 
+  	return answer;
+  }
+  
+  public static void main(String[] args){
+
+    Scanner kb =new Scanner(System.in);
+  	Main T = new Main();
+
+    String str = kb.next(); //문자열 읽음
+    char c = kb.next().charAt(0); // next는 문자열이고, charAt(index)는 스트링을 인덱스로 접근
+    
+    System.out.println(T.solution(str, c));
+  }
+}
