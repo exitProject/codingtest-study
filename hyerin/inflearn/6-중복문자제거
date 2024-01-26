@@ -1,0 +1,24 @@
+import java.util.*;
+  
+public class Main {
+  
+  public String solution(String str){
+  	String answer ="";
+
+    for(int i=0; i<str.length(); i++){
+      // str.charAt(i) : i번째 인덱스에 있는 문자
+      // str.indexOf(str.charAt(i)) : i번째 문자가 처음 발견된 인덱스번호
+      
+		if( str.indexOf(str.charAt(i)) == i ) answer+=str.charAt(i);
+    }
+    
+  	return answer;
+  }
+  
+  public static void main(String[] args){
+    Main T = new Main();
+    Scanner in=new Scanner(System.in);
+    String str = in.next();
+    System.out.println(T.solution(str));
+  }
+}
