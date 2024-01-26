@@ -3,7 +3,7 @@ import java.util.*;
 public class Main {
   
   public String solution(String str){
-  	String answer = " ";
+  	String answer = "";
     
     
   	return answer;
