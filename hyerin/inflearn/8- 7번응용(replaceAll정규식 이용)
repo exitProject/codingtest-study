@@ -2,6 +2,8 @@ import java.util.*;
 class Main {	
 	public String solution(String s){
 		String answer="NO";
+
+		// A-Z가 아닌(^)것들을  ""로 replace해라
 		s=s.toUpperCase().replaceAll("[^A-Z]", "");
 		String tmp=new StringBuilder(s).reverse().toString();
 		if(s.equals(tmp)) answer="YES";
