@@ -1,0 +1,26 @@
+import java.util.Scanner;
+  
+public class Main {
+  
+  public String solution(String str){
+  
+    String answer = "";
+    
+    for(char x : str.toCharArray()){
+     //소문자이면	
+     if(Character.isLowerCase(x))
+      	answer += Character.toUpperCase(x);
+     else
+     	answer += Character.toLowerCase(x);  
+   	}
+    return answer;
+  }
+   
+  public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+	Main T = new Main();
+    String str = sc.next();
+   
+    System.out.println(T.solution(str));
+  }
+}
