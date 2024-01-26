@@ -31,6 +31,7 @@ class Main {
 	public String solution(String str){
 		String answer="NO";
 		String tmp=new StringBuilder(str).reverse().toString();
+		//str=str.toUpperCase(); 이거 쓰면 아래서 str.equals(tmp)로 비교하면됨
 		if(str.equalsIgnoreCase(tmp)) answer="YES";
 		return answer;
 	}
