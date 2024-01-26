@@ -1,0 +1,61 @@
+
+import java.util.Scanner;
+public class Main {
+  
+  public String solution(String str){
+  
+   String answer = "";
+   int m = Integer.MIN_VALUE; 
+
+
+/*
+//////////////////////////////////////////////////////////////////
+// 1. split을 사용하여 푸는 경우
+
+
+   String[] s = str.split(" "); 
+   for(String x : s){
+   		int len = x.length();
+     	if(len>m){
+        	m=len;
+          answer = x;
+        }
+   }
+*/
+
+/*
+//////////////////////////////////////////////////////////////////
+// 2. indexOf를 사용하여 푸는 경우
+
+   int pos;
+     //띄어쓰기를 발견하면 인덱스 번호 저장하고 띄어쓰기가 없어지면 종료
+    while((pos=str.indexOf(' '))!=-1){
+   
+    	String tmp = str.substring(0, pos);   // 0~5까지 substring하면 4
+      	int len = tmp.length();
+      	if(len > m) {
+        	m = len;
+          	answer = tmp;
+        }
+      
+       // 띄어쓰기 다음부터 나오는 문장으로 초기화
+      str = str.substring(pos+1);
+    }
+    // 마지막 단어인 study는 공백이 없으므로 while문의 pos로 판별 불가해서 여기서 확인
+    if(str.length() > m)  answer = str;
+*/
+
+
+     return answer;	
+  }
+
+
+
+  public static void main(String[] args){
+    Main T = new Main();
+    Scanner in=new Scanner(System.in);
+    String str = in.nextLine(); // 문자열이 아닌 문장을 받음
+    System.out.println(T.solution(str));
+   
+  }
+}
