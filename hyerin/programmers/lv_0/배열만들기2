@@ -1,0 +1,49 @@
+/*
+
+https://school.programmers.co.kr/learn/courses/30/lessons/181921
+
+*/
+
+
+import java.util.ArrayList;
+
+class Solution {
+    public int[] solution(int l, int r) {
+
+        int cnt = 0;  
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        
+        
+        for(int i=l; i<r+1; i++){
+            
+            String str = Integer.toString(i);    
+            
+          
+            if(str.charAt(0) == '5' ){
+                
+                 for(int x=0; x < str.length();x++){
+                     
+                    if(str.charAt(x) == '5' || str.charAt(x) == '0' ){
+                      cnt++;
+                   }
+                 }
+                if(cnt ==  str.length()){                    
+                    list.add(i);
+                }
+            }
+            cnt = 0;
+        }
+        if(list.size() == 0) {
+            list.add(-1);            
+        }
+        
+         int[] answer = new int[list.size()];
+        
+        for(int i=0; i<list.size();i++){
+            answer[i] = list.get(i);
+        }
+        
+        
+        return answer;
+    }
+}
