@@ -29,4 +29,32 @@ public class Main{
 }
 /////////////////////////////////////////////////////////////////////////////
 
+// 리팩토링 한 코드
 
+import java.util.*;
+
+class Main{
+    
+    public static int[] getAlphabetCnt(String str) {
+        int[] cnt = new int[26];
+        for(int i=0; i< str.length();i++){
+           cnt[str.charAt(i)-'a']++;
+        }
+        return cnt;
+    }
+     
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String a = sc.next();
+        String b = sc.next();
+        
+        int[] cntA = getAlphabetCnt(a);
+        int[] cntB = getAlphabetCnt(b);
+
+        int ans =0;
+        for(int i=0; i <26; i++)
+            ans+=Math.abs(cntA[i] - cntB[i]);  //Math.abs 함수는 절대값으로 리턴해줌
+
+        System.out.println(ans);
+    } 
+}
