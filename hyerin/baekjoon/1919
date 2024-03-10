@@ -1,0 +1,29 @@
+
+
+import java.util.*;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String a = sc.next();
+        String b = sc.next();
+       
+        int[] cntA = new int[26]; //알파벳 수
+        int[] cntB = new int[26];
+        
+        for(int i=0; i< a.length();i++){
+            cntA[a.charAt(i)-'a']++;
+        }
+        for(int i=0; i< b.length();i++){
+            cntB[b.charAt(i)-'a']++;
+        }
+        
+        int ans =0;
+        for(int i=0; i <26; i++){
+           if(cntA[i] > cntB[i]) ans += cntA[i]-cntB[i];
+           if(cntB[i] > cntA[i]) ans += cntB[i]-cntA[i];
+        }
+
+        System.out.println(ans);
+    } 
+}
