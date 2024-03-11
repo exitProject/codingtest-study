@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String doc = sc.nextLine();    //공백포함
+        String word = sc.nextLine();
+/*        
+//방법1
+        int cnt = 0;
+        int startIndex=0;
+        
+        while(true){         
+            int findIndex = doc.indexOf(word, startIndex);
+            if(findIndex < 0)
+                break;
+            cnt++;
+            startIndex = findIndex+ word.length(); 
+        }
+*/
+        
+//방법2
+        //word가 발견되면 ""로 치환
+        String replaced = doc.replace(word, "");     //ababababa -> bba
+        int length = doc.length() - replaced.length(); // 9 - 3 = 6
+        int cnt = length / word.length();              // 6 / 3 = 2
+        
+        System.out.println(cnt);
+    } 
+}
